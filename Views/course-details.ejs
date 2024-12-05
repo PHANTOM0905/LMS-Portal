@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= course.title %></title>
+  <link rel="stylesheet" href="/css/styles.css"> <!-- Link to your CSS -->
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <h1><%= course.title %></h1>
+      <a href="/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <div class="course-details">
+      <div class="container">
+        <!-- Course Image Section -->
+        <div class="course-image">
+          <!-- Updated image path -->
+          <img src="<%= course.image %>" alt="<%= course.title %>">
+        </div>
+        <!-- Course Description Section -->
+        <div class="course-content">
+          <h1><%= course.title %></h1>
+          <h2>Course Description</h2>
+          <p><%= course.content %></p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 LMS Portal. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

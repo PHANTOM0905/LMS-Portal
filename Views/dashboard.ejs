@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to Your Dashboard</h1>
+    <a href="/">Logout</a>
+  </header>
+  <main>
+    <h2>Your Courses</h2>
+    <div id="course-list">
+      <% if (courses && courses.length > 0) { %>
+        <% courses.forEach(course => { %>
+          <div class="course">
+            <!-- Course image placed above the title -->
+            <img src="<%= course.image %>" alt="<%= course.title %>" onerror="this.src='/images/default-course.jpg';">
+            
+            <!-- Only the course title is wrapped in a link -->
+            <a href="/course/<%= course.id %>">
+              <h3><%= course.title %></h3>
+            </a>
+
+            <!-- Course description below the title -->
+            <p><%= course.description %></p>
+          </div>
+        <% }) %>
+      <% } else { %>
+        <p>No courses available.</p>
+      <% } %>
+    </div>
+  </main>
+</body>
+</html>
